@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Project_SE.jnlp">
+    <information>
+        <title>Project_SE</title>
+        <vendor>andyv</vendor>
+        <description>null</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="10.0.2+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="Project_SE.jar" size="242213" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="800" height="600" main-class="project_se.Project_SE" name="Project_SE"/>
+</jnlp>
+

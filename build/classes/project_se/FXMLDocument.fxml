@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project_se.FXMLDocumentController">
+  <children>
+      <TabPane prefHeight="142.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="File">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="117.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="112.0" prefWidth="900.0">
+                                 <children>
+                                    <VBox alignment="CENTER" fillWidth="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="103.0" prefWidth="0.0" style="ss: black;">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox prefHeight="64.0" prefWidth="133.0">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Button fx:id="newFile" mnemonicParsing="false" onAction="#newFile" style="-fx-background-color: transparent;">
+                                                         <graphic>
+                                                            <ImageView accessibleRole="BUTTON" disable="true" fitHeight="45.0" fitWidth="45.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                               <image>
+                                                                  <Image url="@image/169262.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutX="-6.0" layoutY="-3.0" opacity="0.75" prefHeight="17.0" prefWidth="68.0" text="New" textAlignment="CENTER" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="87.0" prefWidth="100.0" spacing="5.0">
+                                                   <children>
+                                                      <HBox VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Button fx:id="saveFile" mnemonicParsing="false" onAction="#saveFile" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/download.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Save" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="38.0" prefWidth="88.0" VBox.vgrow="SOMETIMES">
+                                                         <children>
+                                                            <Button fx:id="loadFile" mnemonicParsing="false" onAction="#loadFile" style="-fx-background-color: transparent;">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/1092216.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Load" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                             <padding>
+                                                <Insets right="-10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" opacity="0.5" prefHeight="18.0" prefWidth="235.0" text="File" textAlignment="CENTER">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="134.0" prefWidth="0.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Home">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="117.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="112.0" prefWidth="900.0">
+                                 <children>
+                                    <VBox alignment="CENTER" fillWidth="false" layoutX="15.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="103.0" prefWidth="0.0" style="ss: black;">
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox prefHeight="64.0" prefWidth="133.0">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Button fx:id="pasteButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                         <graphic>
+                                                            <ImageView accessibleRole="BUTTON" disable="true" fitHeight="45.0" fitWidth="45.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                               <image>
+                                                                  <Image url="@image/33296.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutX="16.0" layoutY="-3.0" opacity="0.75" text="Paste" textAlignment="CENTER" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="87.0" prefWidth="100.0" spacing="5.0">
+                                                   <children>
+                                                      <HBox VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Button fx:id="cutButton" mnemonicParsing="false" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" rotate="180.0" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/382.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Cut" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="38.0" prefWidth="88.0" VBox.vgrow="SOMETIMES">
+                                                         <children>
+                                                            <Button fx:id="copyButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/178921.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Copy" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="30.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                             <padding>
+                                                <Insets right="-10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" opacity="0.5" prefHeight="18.0" prefWidth="235.0" text="Clipboard" textAlignment="CENTER">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="1.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <Separator layoutX="164.0" layoutY="10.0" orientation="VERTICAL" prefHeight="112.0" prefWidth="0.0" />
+                                    <VBox alignment="CENTER" fillWidth="false" layoutX="11.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="117.0" prefWidth="163.0" style="ss: black;">
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox prefHeight="64.0" prefWidth="163.0">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Button fx:id="selectButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                         <graphic>
+                                                            <ImageView accessibleRole="BUTTON" disable="true" fitHeight="45.0" fitWidth="45.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                               <image>
+                                                                  <Image url="@image/selection.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutX="-1.0" layoutY="-3.0" opacity="0.75" prefHeight="17.0" prefWidth="59.0" text="Select" textAlignment="CENTER" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="87.0" prefWidth="100.0" spacing="5.0">
+                                                   <children>
+                                                      <HBox VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Button fx:id="resizeButton" mnemonicParsing="false" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/1014901.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Resize" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="30.0" prefWidth="120.0" VBox.vgrow="SOMETIMES">
+                                                         <children>
+                                                            <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="COMBO_BOX" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/rotate-image-icon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Rotate" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                            <MenuButton mnemonicParsing="false" prefHeight="29.0" prefWidth="82.0" style="-fx-background-color: transparent;">
+                                                               <items>
+                                                                  <MenuItem fx:id="flipVerticalButton" mnemonicParsing="false" text=" Flip vertical">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="150.0" fitWidth="20.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/6167768.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </MenuItem>
+                                                                  <MenuItem fx:id="flipHorizontalButton" mnemonicParsing="false" text=" Flip horizontal">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="150.0" fitWidth="20.0" opacity="0.6" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/flip.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </MenuItem>
+                                                               </items>
+                                                               <padding>
+                                                                  <Insets left="24.0" top="3.0" />
+                                                               </padding>
+                                                            </MenuButton>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets bottom="-2.0" left="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                             <padding>
+                                                <Insets right="-10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" opacity="0.5" prefHeight="18.0" prefWidth="235.0" text="Image" textAlignment="CENTER">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="1.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                    <VBox alignment="CENTER" fillWidth="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="110.0" prefWidth="416.0" style="ss: black;">
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox prefHeight="65.0" prefWidth="409.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="65.0" prefWidth="446.0" spacing="5.0">
+                                                   <children>
+                                                      <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="321.0" VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <HBox prefHeight="30.0" prefWidth="131.0">
+                                                               <children>
+                                                                  <Button fx:id="undoButton" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                                     <graphic>
+                                                                        <ImageView accessibleRole="COMBO_BOX" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/undo-27.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                                  <Pane>
+                                                                     <children>
+                                                                        <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Undo" textAlignment="CENTER" />
+                                                                     </children>
+                                                                  </Pane>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox prefHeight="30.0" prefWidth="359.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="0.0" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                                                     <graphic>
+                                                                        <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/paragraph_148706.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <cursor>
+                                                                        <Cursor fx:constant="HAND" />
+                                                                     </cursor>
+                                                                  </Button>
+                                                                  <Pane>
+                                                                     <children>
+                                                                        <TextField fx:id="textField" prefHeight="25.0" prefWidth="192.0" />
+                                                                     </children>
+                                                                  </Pane>
+                                                                  <HBox spacing="9.0">
+                                                                     <children>
+                                                                        <Button fx:id="lessSizeCharacter" mnemonicParsing="false" text="-">
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </Button>
+                                                                        <Label fx:id="sizeCharacter" alignment="CENTER" text="12">
+                                                                           <padding>
+                                                                              <Insets top="4.5" />
+                                                                           </padding>
+                                                                        </Label>
+                                                                        <Button fx:id="plusSizeCharacter" mnemonicParsing="false" text="+">
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </Button>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets left="12.0" />
+                                                                     </HBox.margin>
+                                                                  </HBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="30.0" prefWidth="352.0" VBox.vgrow="NEVER">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <children>
+                                                            <HBox prefHeight="30.0" prefWidth="203.0">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                                     <graphic>
+                                                                        <ImageView accessibleRole="COMBO_BOX" disable="true" fitHeight="30.0" fitWidth="24.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/shapes.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="-2.0" top="2.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Pane>
+                                                                     <children>
+                                                                        <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Shapes" textAlignment="CENTER" />
+                                                                     </children>
+                                                                  </Pane>
+                                                                  <MenuButton lineSpacing="2.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="16.0" style="-fx-background-color: transparent;">
+                                                                     <items>
+                                                                        <MenuItem fx:id="lineButton" mnemonicParsing="false" onAction="#createNewLine" text=" Line">
+                                                                           <graphic>
+                                                                              <Line endX="27.0" endY="12.0" />
+                                                                           </graphic>
+                                                                        </MenuItem>
+                                                                        <MenuItem fx:id="rectangleButton" mnemonicParsing="false" onAction="#createNewRectangle" text=" Rectangle">
+                                                                           <graphic>
+                                                                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="15.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+                                                                           </graphic>
+                                                                        </MenuItem>
+                                                                        <MenuItem fx:id="ellipseButton" mnemonicParsing="false" onAction="#createNewEllipse" text=" Ellipse">
+                                                                           <graphic>
+                                                                              <Ellipse fill="DODGERBLUE" radiusX="15.0" radiusY="8.0" stroke="BLACK" strokeType="INSIDE" />
+                                                                           </graphic>
+                                                                        </MenuItem>
+                                                                     </items>
+                                                                     <padding>
+                                                                        <Insets left="30.0" top="4.5" />
+                                                                     </padding>
+                                                                     <HBox.margin>
+                                                                        <Insets left="-42.0" />
+                                                                     </HBox.margin>
+                                                                  </MenuButton>
+                                                               </children>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </HBox>
+                                                            <HBox prefHeight="33.0" prefWidth="198.0" HBox.hgrow="NEVER">
+                                                               <children>
+                                                                  <Button mnemonicParsing="false" prefWidth="18.0" style="-fx-background-color: transparent;">
+                                                                     <graphic>
+                                                                        <ImageView accessibleRole="COMBO_BOX" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/icons8-colore-di-riempimento-50.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                                  <ColorPicker fx:id="colorPickerFill" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                                                                     <HBox.margin>
+                                                                        <Insets left="1.0" top="3.0" />
+                                                                     </HBox.margin>
+                                                                     <value>
+                                                                        <Color green="0.501960813999176" blue="0.501960813999176" />
+                                                                     </value>
+                                                                  </ColorPicker>
+                                                                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="18.0" style="-fx-background-color: transparent;">
+                                                                     <graphic>
+                                                                        <ImageView accessibleRole="COMBO_BOX" disable="true" fitHeight="27.0" fitWidth="20.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                           <image>
+                                                                              <Image url="@image/3800.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <HBox.margin>
+                                                                        <Insets left="15.0" top="1.5" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <ColorPicker fx:id="colorPickerOutline" editable="true" layoutX="48.0" layoutY="13.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                                                                     <HBox.margin>
+                                                                        <Insets left="1.0" top="3.0" />
+                                                                     </HBox.margin>
+                                                                     <value>
+                                                                        <Color opacity="0.6177811622619629" />
+                                                                     </value>
+                                                                  </ColorPicker>
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets />
+                                                               </HBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" opacity="0.5" prefHeight="18.0" prefWidth="392.0" text="Tools">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="1.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                    <VBox alignment="CENTER" fillWidth="false" layoutX="15.0" layoutY="15.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="102.0" prefWidth="186.0" style="ss: black;">
+                                       <padding>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <HBox fillHeight="false" prefHeight="64.0" prefWidth="176.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Button fx:id="grid" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                         <graphic>
+                                                            <ImageView accessibleRole="BUTTON" disable="true" fitHeight="45.0" fitWidth="45.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                               <image>
+                                                                  <Image url="@image/637294.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutX="-1.0" layoutY="-3.0" opacity="0.75" prefHeight="17.0" prefWidth="65.0" text="Grid" textAlignment="CENTER" />
+                                                         </children>
+                                                      </Pane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="87.0" prefWidth="102.0" spacing="5.0">
+                                                   <children>
+                                                      <HBox VBox.vgrow="NEVER">
+                                                         <children>
+                                                            <Button fx:id="zoomIn" mnemonicParsing="false" style="-fx-background-color: transparent;" HBox.hgrow="NEVER">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/icons8-zoom-avanti-48.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Zoom in" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="38.0" prefWidth="88.0" VBox.vgrow="SOMETIMES">
+                                                         <children>
+                                                            <Button fx:id="zoomOut" mnemonicParsing="false" style="-fx-background-color: transparent;">
+                                                               <graphic>
+                                                                  <ImageView accessibleRole="BUTTON" disable="true" fitHeight="30.0" fitWidth="21.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                                                     <image>
+                                                                        <Image url="@image/icons8-zoom-indietro-48.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <cursor>
+                                                                  <Cursor fx:constant="HAND" />
+                                                               </cursor>
+                                                            </Button>
+                                                            <Pane>
+                                                               <children>
+                                                                  <Label alignment="BOTTOM_CENTER" graphicTextGap="6.0" layoutY="8.0" opacity="0.75" text="Zoom out" textAlignment="CENTER" />
+                                                               </children>
+                                                            </Pane>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                             <padding>
+                                                <Insets right="-10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" graphicTextGap="6.0" opacity="0.5" prefHeight="18.0" prefWidth="235.0" text="Clipboard" textAlignment="CENTER">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="1.0" top="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </Separator>
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="901.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="16.0" left="15.0" right="21.0" top="8.0" />
+         </VBox.margin>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <HBox fillHeight="false" prefHeight="15.0" prefWidth="198.0">
+                           <children>
+                              <Label text="Shape Fill" />
+                              <ColorPicker fx:id="menuColorPickerFill" editable="true" nodeOrientation="LEFT_TO_RIGHT" onAction="#changeColorFill" prefHeight="18.0" prefWidth="53.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="1.0" top="3.0" />
+                                 </HBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <HBox prefHeight="15.0" prefWidth="198.0">
+                           <children>
+                              <Label text="Shape Outline" />
+                              <ColorPicker fx:id="menuColorPickerOutline" editable="true" layoutX="48.0" layoutY="13.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#changeColorOutline" prefHeight="15.0" prefWidth="53.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                                 <HBox.margin>
+                                    <Insets left="1.0" />
+                                 </HBox.margin>
+                              </ColorPicker>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </MenuItem>
+                <MenuItem fx:id="menuCut" mnemonicParsing="false" onAction="#menuCutShape" text="Cut" />
+                  <MenuItem fx:id="menuCopy" mnemonicParsing="false" onAction="#menuCopyShape" text="Copy" />
+                  <MenuItem fx:id="menuPaste" mnemonicParsing="false" onAction="#menuPasteShape" text="Paste" />
+                  <MenuItem fx:id="menuDelete" mnemonicParsing="false" onAction="#menuDeleteShape" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <content>
+            <AnchorPane fx:id="anchorPane" focusTraversable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" onDragDetected="#drawShape" prefHeight="418.0" prefWidth="922.0" style="-fx-background-color: white;">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="414.0" fitWidth="918.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+  </children>
+</VBox>
